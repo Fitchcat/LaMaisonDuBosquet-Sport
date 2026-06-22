@@ -173,6 +173,9 @@ section {
   height: 130px;
   transition: all var(--transition-fast);
   margin-top: 60px; /* Pousse le logo encore plus vers le bas */
+  image-rendering: high-quality; /* Améliore le lissage */
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0); /* Force l'accélération matérielle */
 }
 
 .site-header.scrolled .logo img {
