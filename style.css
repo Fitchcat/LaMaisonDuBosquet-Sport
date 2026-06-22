@@ -387,6 +387,8 @@ section {
 .editorial-img {
   width: 100%;
   height: 70vh; /* Photos très verticales façon mode */
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -454,6 +456,8 @@ section {
   width: 100%;
   height: 80vh;
   padding: 0 var(--container-px);
+  position: relative;
+  overflow: hidden;
 }
 
 .large-image-break img {
