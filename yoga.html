@@ -101,9 +101,47 @@
       <h2>Planning Yoga</h2>
     </div>
     
-    <div style="border: 1px solid var(--color-border); padding: 5rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; background: var(--color-white);">
-      <p style="font-family: var(--font-heading); font-size: 1.5rem;">[Intégration BSport filtrée sur l'activité Yoga]</p>
-    </div>
+    <div id="bsport-widget-982284" style="max-width: 900px; margin: 0 auto; min-height: 500px;"></div>
+    <script id="insert-bsport-widget-cdn">!function (b, s, p, o, r, t) { typeof window.BsportWidget === "undefined" && !document.getElementById("bsport-widget-cdn") && !function () { m = b.createElement(s), m.id = "bsport-widget-cdn", m.src = p, b.getElementsByTagName("head")[0].appendChild(m) }() }(document, "script", "https://cdn.bsport.io/scripts/widget.js")</script>
+    <script id="bsport-widget-mount">
+        function MountBsportWidget(config, repeat=1) {
+            if (repeat > 50) { return }
+            if (!window.BsportWidget) {
+                return setTimeout(() => {
+                    MountBsportWidget(config,repeat+1)
+                }, 100 * repeat || 1)
+            }
+            BsportWidget.mount(config)
+        }
+    </script>
+    <script>
+        MountBsportWidget({
+                "parentElement": "bsport-widget-982284",
+                "companyId": 2561,
+                "franchiseId": null,
+                "dialogMode": 1,
+                "widgetType": "calendar", 
+                "showFab": false,
+                "fullScreenPopup": false,
+                "styles":undefined,
+                "config": {
+                    "calendar": {                "establishments": [
+                    9788,
+                    9787,
+                    9790
+                ],
+                "establishmentGroups": [],
+                "metaActivities": [
+                    182567,
+                    182570,
+                    202113
+                ],
+                "levels": [
+                    1
+                ]}
+                }  
+            })
+    </script>
   </section>
 
   <!-- CTA BANNER -->
