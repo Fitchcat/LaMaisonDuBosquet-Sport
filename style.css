@@ -1,0 +1,576 @@
+/* ==========================================================================
+   VARIABLES CSS (LUXURY WELLNESS - HOTEL STYLE)
+   Mix: 50% Sky Ting, 30% The Pilates Class, 20% Ourano Yoga
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  /* Colors - Ultra minimaliste */
+  --color-bg: #FBF9F6; /* Crème très clair, poudré */
+  --color-text: #222222; /* Noir profond mais doux (pas #000) */
+  --color-text-light: #666666; /* Gris chaud pour les descriptions */
+  
+  /* L'accent demandé par le client */
+  --color-accent: #C1442D; /* Rouge/Orange vibrant */
+  
+  --color-white: #FFFFFF;
+  --color-border: #EAE6DF; /* Bordure presque invisible */
+
+  /* Typography - Très mode / hôtellerie */
+  --font-heading: 'Cinzel', serif; /* Serif très élégant, classique, majestueux */
+  --font-body: 'Jost', sans-serif; /* Sans-serif géométrique, fin, très "The Pilates Class" */
+
+  /* Layout & Spacing - Le "vide" est notre meilleur atout */
+  --header-height: 80px;
+  --header-scrolled-height: 60px;
+  --container-max: 1400px;
+  --container-px: 5vw;
+  --spacing-section: 15rem; /* Marges gigantesques */
+  --spacing-section-mobile: 8rem;
+
+  /* Timings */
+  --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 0.3s ease;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Rules */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  letter-spacing: 0.01em;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  max-width: 600px; /* Ne jamais avoir de lignes de texte trop longues */
+}
+
+/* Le sur-titre style "magazine" (très The Pilates Class) */
+.sur-titre {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+section {
+  padding: var(--spacing-section) 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-section-mobile) 0;
+  }
+}
+
+.text-center { text-align: center; }
+.text-center p { margin-left: auto; margin-right: auto; }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-slow);
+  background: transparent;
+  color: var(--color-white);
+  border-bottom: none;
+}
+
+.site-header.scrolled {
+  background: #5C786F;
+  height: var(--header-scrolled-height);
+}
+
+/* Logo beaucoup plus grand au repos */
+.logo img {
+  height: 130px;
+  transition: all var(--transition-fast);
+  margin-top: 60px; /* Pousse le logo encore plus vers le bas */
+}
+
+.site-header.scrolled .logo img {
+  height: 40px; /* Revient petit sur le bandeau sauge */
+  margin-top: 0px; /* Le replace au centre lors du scroll */
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 4rem;
+}
+
+.main-nav a {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  position: relative;
+  color: var(--color-white);
+}
+
+.main-nav a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   BUTTONS (Accent Terracotta)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border-radius: 0; /* Pas d'arrondis pour un look plus "mode" */
+}
+
+.btn:hover {
+  background: var(--color-text);
+  color: var(--color-white);
+}
+
+/* Le bouton principal prend l'accent Terracotta demandé */
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   HERO (Video Fullscreen)
+   ========================================================================== */
+.luxury-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Retrait du padding-top pour que la vidéo aille jusqu'en haut sous le header */
+  padding-top: 0; 
+  margin-bottom: 5rem;
+}
+
+.hero-video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: kenBurns 30s infinite alternate ease-in-out;
+}
+
+/* Recadrage spécifique pour mobile pour ne pas couper la tête */
+@media (max-width: 768px) {
+  .hero-video-wrapper video {
+    object-position: center 0%; /* Calage absolu sur le haut de l'image (0%) */
+  }
+}
+
+/* Overlay sombre pour garantir la lisibilité du texte blanc */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Ken Burns effect pour toutes les bannières */
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+
+/* Titre par-dessus la vidéo, poussé vers le bas */
+.hero-text-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+  padding: 0 2rem;
+  max-width: 900px;
+  margin-top: 25vh; /* Pousse le contenu vers le bas */
+}
+
+@media (max-width: 768px) {
+  .hero-text-overlay {
+    margin-top: 10vh; /* Remonte le texte sur mobile */
+  }
+}
+
+.hero-text-overlay h1 {
+  color: var(--color-white);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-size: clamp(2.2rem, 5vw, 4.5rem); /* Titre légèrement plus petit */
+}
+
+.hero-text-overlay .sur-titre {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-text-overlay p {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-size: 1.35rem; /* Agrandissement du sous-titre */
+  font-weight: 400;
+}
+
+/* Variante où l'image prend vraiment 100% de l'écran sans padding */
+.hero-full-bleed {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-full-bleed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: kenBurns 30s infinite alternate ease-in-out;
+}
+
+/* ==========================================================================
+   EDITORIAL SPLIT (Image + Texte)
+   ========================================================================== */
+.editorial-split {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .editorial-split {
+    flex-direction: row;
+    align-items: center;
+    gap: 8rem; /* Vide gigantesque entre photo et texte */
+  }
+  .editorial-split.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.editorial-img {
+  width: 100%;
+  height: 70vh; /* Photos très verticales façon mode */
+}
+
+@media (min-width: 1024px) {
+  .editorial-img {
+    width: 45%;
+    height: 90vh;
+  }
+}
+
+.editorial-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-content {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .editorial-content {
+    width: 55%;
+    padding-right: 4rem;
+  }
+  .editorial-split.reverse .editorial-content {
+    padding-right: 0;
+    padding-left: 4rem;
+  }
+}
+
+/* ==========================================================================
+   LISTE ÉPURÉE (Bénéfices / Valeurs)
+   ========================================================================== */
+.clean-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.clean-list-item {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+.clean-list-item h3 {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.clean-list-item p {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   LARGE IMAGE BREAK
+   ========================================================================== */
+.large-image-break {
+  width: 100%;
+  height: 80vh;
+  padding: 0 var(--container-px);
+}
+
+.large-image-break img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   CTA BANNER (Offre découverte)
+   ========================================================================== */
+.cta-banner {
+  text-align: center;
+  padding: 10rem var(--container-px);
+  background-color: var(--color-bg); /* Reste crème, pas de fond lourd */
+}
+
+.cta-banner h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 2rem;
+}
+
+.cta-banner p {
+  margin: 0 auto 3rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  padding: 8rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.site-footer h4 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+  color: var(--color-text-light);
+}
+
+.site-footer p, .site-footer a {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   MOBILE MENU & ANIMATIONS
+   ========================================================================== */
+/* Masqué par défaut */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .main-nav, .site-header .btn { display: none; }
+  
+  .burger-btn {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+    width: 30px;
+    height: 12px;
+    position: relative;
+  }
+  .burger-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+  .burger-line:nth-child(1) { top: 0; }
+  .burger-line:nth-child(2) { top: 50%; transform: translateY(-50%); display: none; }
+  .burger-line:nth-child(3) { bottom: 0; }
+
+  .mobile-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-bg);
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-slow);
+  }
+  
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu a {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
