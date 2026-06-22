@@ -655,21 +655,25 @@ section {
 /* ==========================================================================
    CUSTOM SCROLLBARS (Discreet luxury)
    ========================================================================== */
-::-webkit-scrollbar {
+::-webkit-scrollbar,
+div[id^="bsport-widget"]::-webkit-scrollbar {
   width: 6px; /* Très discret */
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track,
+div[id^="bsport-widget"]::-webkit-scrollbar-track {
   background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #caa77a; /* Sable / Beige */
+::-webkit-scrollbar-thumb,
+div[id^="bsport-widget"]::-webkit-scrollbar-thumb {
+  background-color: #caa77a !important; /* Sable / Beige */
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: #b59266; /* Un peu plus foncé au survol */
+::-webkit-scrollbar-thumb:hover,
+div[id^="bsport-widget"]::-webkit-scrollbar-thumb:hover {
+  background-color: #b59266 !important; /* Un peu plus foncé au survol */
 }
 
 /* Support Firefox */
