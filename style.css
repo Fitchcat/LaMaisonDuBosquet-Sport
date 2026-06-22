@@ -129,8 +129,7 @@ img {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding-left: var(--container-px);
-  padding-right: var(--container-px);
+  padding: 0 var(--container-px);
 }
 
 section {
