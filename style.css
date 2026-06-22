@@ -221,7 +221,7 @@ section {
   color: var(--color-text);
   cursor: pointer;
   transition: all var(--transition-fast);
-  border-radius: 0; /* Pas d'arrondis pour un look plus "mode" */
+  border-radius: 50px; /* Boutons totalement arrondis */
 }
 
 .btn:hover {
