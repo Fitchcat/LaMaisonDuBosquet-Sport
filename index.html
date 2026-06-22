@@ -218,7 +218,7 @@
         window.requestAnimationFrame(() => {
           const parallaxElements = document.querySelectorAll(".hero-image-wrapper video, .hero-image-wrapper img, .large-image-break img, .editorial-img img");
           parallaxElements.forEach(el => {
-            const speed = 0.12;
+            const speed = 0.05;
             const rect = el.parentElement.getBoundingClientRect();
             if(rect.top < window.innerHeight && rect.bottom > 0) {
               const yPos = (rect.top * speed);
