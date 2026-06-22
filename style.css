@@ -647,3 +647,14 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   PARALLAX OVERRIDES
+   ========================================================================== */
+.hero-image-wrapper video,
+.hero-image-wrapper img,
+.large-image-break img,
+.editorial-img img {
+  will-change: transform;
+  transform-origin: center;
+}

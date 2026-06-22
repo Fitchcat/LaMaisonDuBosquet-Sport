@@ -205,6 +205,31 @@
         lines[2].style.transform = 'none';
       }
     });
+  
+    // Parallax and global reveal
+    document.querySelectorAll("section:not(.reveal)").forEach(el => {
+      el.classList.add("reveal");
+      observer.observe(el);
+    });
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const parallaxElements = document.querySelectorAll(".hero-image-wrapper video, .hero-image-wrapper img, .large-image-break img, .editorial-img img");
+          parallaxElements.forEach(el => {
+            const speed = 0.12;
+            const rect = el.parentElement.getBoundingClientRect();
+            if(rect.top < window.innerHeight && rect.bottom > 0) {
+              const yPos = (rect.top * speed);
+              el.style.transform = `scale(1.15) translateY(${yPos}px)`;
+            }
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
   </script>
 </body>
 </html>
