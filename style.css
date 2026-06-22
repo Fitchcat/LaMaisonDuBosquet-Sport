@@ -653,6 +653,32 @@ section {
 }
 
 /* ==========================================================================
+   CUSTOM SCROLLBARS (Discreet luxury)
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 6px; /* Très discret */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #caa77a; /* Sable / Beige */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b59266; /* Un peu plus foncé au survol */
+}
+
+/* Support Firefox */
+html, body, div[id^="bsport-widget"] {
+  scrollbar-width: thin;
+  scrollbar-color: #caa77a transparent;
+}
+
+/* ==========================================================================
    PARALLAX OVERRIDES
    ========================================================================== */
 .hero-image-wrapper video,
