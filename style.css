@@ -195,8 +195,12 @@ section {
   color: var(--color-white);
 }
 
-.main-nav a:hover {
-  opacity: 0.8;
+.main-nav a:hover,
+.main-nav a.active {
+  color: #caa77a !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 1;
 }
 
 /* ==========================================================================
