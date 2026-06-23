@@ -652,6 +652,21 @@ section {
   transform: translateY(0);
 }
 
+/* Apparition de gauche à droite pour l'image de gauche */
+.editorial-split .editorial-img.reveal {
+  transform: translateX(-80px);
+}
+
+/* Apparition de droite à gauche pour l'image de droite */
+.editorial-split.reverse .editorial-img.reveal {
+  transform: translateX(80px);
+}
+
+.editorial-split .editorial-img.reveal.visible,
+.editorial-split.reverse .editorial-img.reveal.visible {
+  transform: translateX(0);
+}
+
 /* ==========================================================================
    CUSTOM SCROLLBARS (Discreet luxury)
    ========================================================================== */
@@ -682,13 +697,4 @@ html, body, div[id^="bsport-widget"] {
   scrollbar-color: #caa77a transparent;
 }
 
-/* ==========================================================================
-   PARALLAX OVERRIDES
-   ========================================================================== */
-.hero-image-wrapper video,
-.hero-image-wrapper img,
-.large-image-break img,
-.editorial-img img {
-  will-change: transform;
-  transform-origin: center;
-}
+/* Parallax retiré selon la demande */
