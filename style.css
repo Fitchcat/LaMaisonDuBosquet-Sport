@@ -17,7 +17,7 @@
   --color-border: #EAE6DF; /* Bordure presque invisible */
 
   /* Typography - Très mode / hôtellerie */
-  --font-heading: 'Cinzel', serif; /* Serif très élégant, classique, majestueux */
+  --font-heading: Avenir, sans-serif; /* Avenir comme demandé */
   --font-body: 'Jost', sans-serif; /* Sans-serif géométrique, fin, très "The Pilates Class" */
 
   /* Layout & Spacing - Le "vide" est notre meilleur atout */
@@ -185,12 +185,12 @@ section {
 
 .main-nav ul {
   display: flex;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .main-nav a {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 500;
